@@ -1,0 +1,67 @@
+package Bootcampday2;
+
+public class Intersection 
+{
+	public static void main(String[] args)
+{
+ //creating object
+	Intersection is=new Intersection();
+	// calling method
+	is.inter(); 
+}
+//calling inter() method
+public static void inter() {
+	 //scanner class
+	java.util.Scanner in = new java.util.Scanner(System.in); 
+	System.out.println("Enter the size of array:"); 
+	// taking number of array elements present in the array
+	int number = in.nextInt();  
+	// array initialization for first array
+	int[] first = new int[number]; 
+	 // array initialization for second array
+	int[] second = new int[number]; 
+	// array initialization for intersection array
+	int[] interSection = new int[number];  
+	//initialization of count value to 0
+	int count = 0; 
+	//prompt the user for 1st array elements
+	System.out.println("Enter 1st array elements");
+	 // Assigning 1st array elements 
+	for (int i = 0; i < number; i++) 
+	{
+		 //Storing the elements
+		 first[i] = in.nextInt();
+	}
+	//prompt the user for 2nd array elements
+	System.out.println("Enter 2nd array elements");
+	// Assigning 2nd array elements 
+	for (int j = 0; j < number; j++) 
+	{
+		// storing the elements
+		second[j] = in.nextInt();   
+	}
+	 // for loop for intersection elements
+	for (int i = 0; i < number ; i++)
+	{
+		// it will check one element of 1st array with all the elements in another array 
+		for (int j = 0; j <= number - 1; j++)  
+		{
+			//condition for checking the element is equal or not
+			if (first[i] == second[j]) 
+			{
+				//if it is equal the element stored in intersection array 
+				interSection[count] = first[i]; 
+				count++; 
+			}
+		}
+	}
+	//prompt the user for intersection array
+	System.out.println("Intersection array is : ");
+//  printing the intersection elements
+	for (int k = 0; k < count; k++) 
+	{
+		 // printing elements
+		System.out.println(interSection[k]); 
+	}	
+}//end of main method
+}
